@@ -30,4 +30,8 @@ def edit_w_directions(edit_dict, w_original, directions):
     
     return w_edit
 
+def transfer_to_original(w_original, w_edit, lmin = 3, lmax= 8):
+    w_final = w_original[0].copy()
+    w_final[lmin:lmax] = w_edit.reshape((18,512))[lmin:lmax]
+    return w_final.reshape((1,18,512))
 
